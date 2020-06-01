@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+	<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>class4</title>
+	</head>
+	<body>
+		Numero1
+		<input type="text" name="Numero1" id="Numero1">
+		<br>
+		Numero2
+		<input type="text" name="Numero2" id="Numero2">
+		<br>
+		<button onclick="comparar()"> Calcular </button>
+		<p id="resultado"> </p>
+		
+	</body>
+	
+	<script> 
+		
+		function multiplicacion(a,b)
+		{
+			var resultado = a * b;
+			console.log ("El resultado es: "+resultado);
+			return resultado;
+		};
+
+		function ejecutar()
+		{
+			var Numero1 = document.getElementById("Numero1").value;
+			var Numero2 = document.getElementById("Numero2").value;
+
+			var accion = multiplicacion(Numero1, Numero2);
+
+			document.getElementById("resultado").innerHTML =accion;
+		};
+
+		function elevadoA() {
+			var base = document.getElementById("Numero1").value;
+			var exponente = document.getElementById("Numero2").value;
+			var resultado = 1;
+			
+			for (var i = 1; i <=exponente; i++) 
+			{
+				resultado=resultado*base;
+			}
+
+			alert ("Resultado: "+ resultado);
+
+			document.getElementById("resultado").innerHTML = resultado;
+
+		};
+
+		function comparar()
+		{
+			var Numero1 = document.getElementById("Numero1").value;
+			var Numero2 = document.getElementById("Numero2").value;
+
+			if (Numero1 < Numero2) 
+			{
+				document.getElementById("resultado").innerHTML = "El numero "+Numero1+" es el menor";
+			}
+			else if (Numero1 == Numero2) 
+					{
+						document.getElementById("resultado").innerHTML = "Los numeros son iguales";
+					}
+			else{
+				document.getElementById("resultado").innerHTML = "El numero "+Numero1+" es el mayor";
+				}
+		};
+
+		
+	</script>
+	
+</html>
